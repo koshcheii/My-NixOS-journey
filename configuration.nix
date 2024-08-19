@@ -72,10 +72,10 @@
   users.users.koshchei = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      firefox
-      gnome.gnome-software
-    ];
+    #packages = with pkgs; [
+    #  firefox
+    #  gnome.gnome-software
+    #];
   };
 
   # Enable the Flakes feature and the accompanying new nix command-line tool
