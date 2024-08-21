@@ -18,3 +18,18 @@ reboot
 
 ## Flakes
 https://nixos-and-flakes.thiscute.world/nixos-with-flakes/nixos-flake-configuration-explained
+
+# Build and run virtual-machine with flake
+Build VM:
+```
+git clone https://github.com/koshcheii/My-NixOS-journey
+cd My-NixOS-journey
+nixos-rebuild build-vm --flake '.#nixos'
+```
+
+Run VM with 2048Mb memory:
+```
+result/bin/run-nixos-vm -m 2048
+```
+
+And you will need to comment import **hardware-configuration.nix** in configuration.nix
