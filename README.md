@@ -6,6 +6,11 @@ https://github.com/nix-community/disko/blob/master/docs/quickstart.md
 ## Disko
 https://nixos.wiki/wiki/Disko
 
+Simple example - formating disk with Disko
+``` bash
+sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko --arg disks '[ "/dev/sda" ]' /tmp/disk-config.nix
+```
+
 ``` bash
 cd /tmp
 ...
@@ -18,18 +23,3 @@ reboot
 
 ## Flakes
 https://nixos-and-flakes.thiscute.world/nixos-with-flakes/nixos-flake-configuration-explained
-
-# Build and run virtual-machine with flake
-Build VM:
-```
-git clone https://github.com/koshcheii/My-NixOS-journey
-cd My-NixOS-journey
-nixos-rebuild build-vm --flake '.#nixos'
-```
-
-Run VM with 2048Mb memory:
-```
-result/bin/run-nixos-vm -m 2048
-```
-
-And you will need to comment import **hardware-configuration.nix** in configuration.nix
